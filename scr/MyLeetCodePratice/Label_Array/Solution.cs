@@ -77,14 +77,33 @@ namespace Label_Array
             var dic = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                dic.Add(nums[i], i);
-
                 var temp = target - nums[i];
-                if (dic.ContainsKey(temp) && dic[temp] != i)
-                    return new int[] { i, dic[temp] };
+                if (dic.ContainsKey(temp))
+                    // i 值要比 dic[temp] 大，所以这里返回的结果顺序如下
+                    return new int[] { dic[temp], i };
+
+                //此处会添加重复值，注意
+                if (!dic.ContainsKey(nums[i]))
+                    dic.Add(nums[i], i);
             }
 
             throw new Exception("No two sum solution");
         }
+
+
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int RemoveDuplicates(int[] nums)
+        {
+            return 0;
+        }
+
+
     }
 }
