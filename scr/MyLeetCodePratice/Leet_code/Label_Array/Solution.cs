@@ -6,6 +6,7 @@ namespace Label_Array
 {
     public class Solution
     {
+        #region 两数之和
         /// <summary>
         /// 暴力法:
         /// 遍历每个元素 x，并查找是否存在一个值与 target - x 相等的目标元素。
@@ -89,11 +90,10 @@ namespace Label_Array
 
             throw new Exception("No two sum solution");
         }
+        #endregion
 
 
-
-
-
+        #region 删除排序数组中的重复项
         /// <summary>
         /// 
         /// </summary>
@@ -103,6 +103,8 @@ namespace Label_Array
         {
             return 0;
         }
+        #endregion
+
 
 
     }

@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Label_Array", "Label_Array\Label_Array.csproj", "{2D427BE5-6928-40C6-94B9-FEBF6D83CE19}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LeetCodePratice", "LeetCodePratice", "{A1230107-264C-4992-A795-496A476D2C8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data_Sructure", "Data_Sructure", "{DC1FF214-E600-4A64-96D2-54E977F8F001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Array", "Data_Structure\01Array\01Array.csproj", "{8E1A4D32-3FDB-4510-9911-AC3B33AAD0B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Label_Array", "Leet_code\Label_Array\Label_Array.csproj", "{3B54630E-23EB-4974-9C23-B2A4D8BC65A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithms", "Algorithms", "{FD6CD557-F619-41B1-9489-5F24689ED85A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Data_Structure\Algorithms\Fibonacci\Fibonacci.csproj", "{E17BB1E8-DC20-4EAD-9957-A2C79D83086B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D427BE5-6928-40C6-94B9-FEBF6D83CE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D427BE5-6928-40C6-94B9-FEBF6D83CE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D427BE5-6928-40C6-94B9-FEBF6D83CE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D427BE5-6928-40C6-94B9-FEBF6D83CE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E1A4D32-3FDB-4510-9911-AC3B33AAD0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E1A4D32-3FDB-4510-9911-AC3B33AAD0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E1A4D32-3FDB-4510-9911-AC3B33AAD0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E1A4D32-3FDB-4510-9911-AC3B33AAD0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B54630E-23EB-4974-9C23-B2A4D8BC65A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B54630E-23EB-4974-9C23-B2A4D8BC65A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B54630E-23EB-4974-9C23-B2A4D8BC65A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B54630E-23EB-4974-9C23-B2A4D8BC65A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E1A4D32-3FDB-4510-9911-AC3B33AAD0B7} = {DC1FF214-E600-4A64-96D2-54E977F8F001}
+		{3B54630E-23EB-4974-9C23-B2A4D8BC65A8} = {A1230107-264C-4992-A795-496A476D2C8C}
+		{FD6CD557-F619-41B1-9489-5F24689ED85A} = {DC1FF214-E600-4A64-96D2-54E977F8F001}
+		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B} = {FD6CD557-F619-41B1-9489-5F24689ED85A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EA14812-6688-45A4-98A1-2CAF8EB4FC31}
