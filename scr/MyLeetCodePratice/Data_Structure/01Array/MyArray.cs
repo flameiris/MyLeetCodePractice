@@ -19,6 +19,7 @@ namespace _01Array
         /// </summary>
         private const int DEFAULT_CAPACITY = 10;
         private const int DEFAULT_NOT_FIND = -1;
+        private const int DEFAULT_Num = 1;
 
         /// <summary>
         /// 构造初始化数组，使用默认数组初始化长度10
@@ -44,10 +45,13 @@ namespace _01Array
         /// <param name="n"></param>
         public void Add(int n)
         {
+
+            EnsureCapcity(_size + 1);
+
+            //添加元素到数组
+            _arr[_size] = n;
             //元素总个数自增
             _size++;
-            //添加元素到数组
-            _arr[_size - 1] = n;
         }
 
         /// <summary>
@@ -57,6 +61,8 @@ namespace _01Array
         /// <param name="n"></param>
         public void Add(int index, int n)
         {
+            EnsureCapcity(_size + 1);
+
             //从索引位置开始的元素 到 数组最后一个元素，均向后移动
             //数组最后一个元素最先移动
             for (int i = _size; i > index; i--)
@@ -186,6 +192,22 @@ namespace _01Array
             }
             sb.Append("]");
             return sb.ToString();
+        }
+
+        public void EnsureCapcity(int capacity)
+        {
+            var oldCapacity = _arr.Length;
+            if (capacity > oldCapacity)
+            {
+                int newCapacity = oldCapacity + (oldCapacity >> DEFAULT_Num);
+                int[] newArr = new int[newCapacity];
+                for (int i = 0; i < _size; i++)
+                {
+                    newArr[i] = _arr[i];
+                }
+                _arr = newArr;
+                Console.WriteLine($"扩容：{newCapacity - oldCapacity}");
+            }
         }
     }
 }
