@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinearList.数组;
+using System;
 using System.Text;
 
 namespace _01Array
@@ -50,16 +51,24 @@ namespace _01Array
 
 
             //泛型数组
-            MyArray<Person> personArr = new MyArray<Person>();
-            personArr.Add(new Person { Name = "FlameIris1", Age = 10 });
-            personArr.Add(new Person { Name = "FlameIris2", Age = 20 });
-            personArr.Add(new Person { Name = "FlameIris3", Age = 30 });
-            personArr.Add(new Person { Name = "FlameIris4", Age = 40 });
-            personArr.Add(new Person { Name = "FlameIris5", Age = 50 });
-            personArr.Add(new Person { Name = "FlameIris6", Age = 60 });
+            MyArray<Person> pArr = new MyArray<Person>();
+            var p = new Person { Name = "FlameIris4", Age = 40 };
+            pArr.Add(new Person { Name = "FlameIris1", Age = 10 });
+            pArr.Add(new Person { Name = "FlameIris2", Age = 20 });
+            pArr.Add(new Person { Name = "FlameIris3", Age = 30 });
+            pArr.Add(p);
+            pArr.Add(new Person { Name = "FlameIris5", Age = 50 });
+            pArr.Add(new Person { Name = "FlameIris6", Age = 60 });
+            pArr.Add(null);
+
+            Console.WriteLine($"数组为 {pArr}");
+            Console.WriteLine($"是否存元素 {pArr.Any()}");
+            Console.WriteLine($"数组元素个数为 {pArr.Count()}");
+            Console.WriteLine($"值为p 的元素索引为 {pArr.IndexOf(p)}");
+            Console.WriteLine($"是否存在值为 p的元素 {pArr.Contains(p)}");
+            Console.WriteLine($"是否存在值为 null 的元素 {pArr.Contains(null)}，索引为 {pArr.IndexOf(null)}");
 
 
-            Console.WriteLine($"数组为 {personArr}");
             Console.ReadKey();
         }
     }

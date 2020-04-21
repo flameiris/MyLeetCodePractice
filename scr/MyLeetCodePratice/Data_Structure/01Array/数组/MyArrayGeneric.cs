@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LinearList.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _01Array
+namespace LinearList.数组
 {
     public class MyArray<T> : IMyArray<T>
     {
@@ -178,10 +179,10 @@ namespace _01Array
             for (int i = 0; i < _size; i++)
             {
                 if (i != _size - 1)
-                { sb.Append(_arr[i].ToString() + ", "); }
+                { sb.Append(_arr[i]?.ToString() ?? "null" + ", "); }
                 else
                 {
-                    sb.Append(_arr[i].ToString());
+                    sb.Append(_arr[i]?.ToString() ?? "null");
                 }
             }
             sb.Append("]");

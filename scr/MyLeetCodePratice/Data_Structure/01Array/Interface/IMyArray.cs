@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _01Array
+namespace LinearList.Interface
 {
     public interface IMyArray
     {

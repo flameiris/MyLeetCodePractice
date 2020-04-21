@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LinearList.Interface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _01Array
+namespace LinearList.数组
 {
     public class MyArray : IMyArray
     {

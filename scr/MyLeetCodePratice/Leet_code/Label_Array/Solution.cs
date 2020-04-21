@@ -6,7 +6,7 @@ namespace Label_Array
 {
     public class Solution
     {
-        #region 两数之和
+        #region 1. 两数之和  https://leetcode-cn.com/problems/two-sum/
         /// <summary>
         /// 暴力法:
         /// 遍历每个元素 x，并查找是否存在一个值与 target - x 相等的目标元素。
@@ -93,7 +93,7 @@ namespace Label_Array
         #endregion
 
 
-        #region 删除排序数组中的重复项
+        #region 26. 删除排序数组中的重复项  https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
         /// <summary>
         /// 
         /// </summary>
