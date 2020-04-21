@@ -4,7 +4,7 @@ using System.Text;
 
 namespace _01Array
 {
-    public class MyArray<T> : IMyArray
+    public class MyArray<T> : IMyArray<T>
     {
         /// <summary>
         /// 元素总个数
@@ -13,7 +13,7 @@ namespace _01Array
         /// <summary>
         /// 数组
         /// </summary>
-        private int[] _arr;
+        private T[] _arr;
         /// <summary>
         /// 数组初始化长度
         /// </summary>
@@ -25,7 +25,7 @@ namespace _01Array
         /// </summary>
         public MyArray()
         {
-            _arr = new int[DEFAULT_CAPACITY];
+            _arr = new T[DEFAULT_CAPACITY];
         }
 
         /// <summary>
@@ -35,14 +35,14 @@ namespace _01Array
         public MyArray(int capacity)
         {
             //如果入参小于默认初始化长度，则使用默认初始化长度
-            _arr = new int[capacity < DEFAULT_CAPACITY ? DEFAULT_CAPACITY : capacity];
+            _arr = new T[capacity < DEFAULT_CAPACITY ? DEFAULT_CAPACITY : capacity];
         }
 
         /// <summary>
         /// 添加元素
         /// </summary>
         /// <param name="n"></param>
-        public void Add(int n)
+        public void Add(T n)
         {
             //元素总个数自增
             _size++;
@@ -55,7 +55,7 @@ namespace _01Array
         /// </summary>
         /// <param name="index"></param>
         /// <param name="n"></param>
-        public void Add(int index, int n)
+        public void Add(int index, T n)
         {
             //从索引位置开始的元素 到 数组最后一个元素，均向后移动
             //数组最后一个元素最先移动
@@ -75,7 +75,7 @@ namespace _01Array
         /// <param name="index"></param>
         /// <param name="n"></param>
         /// <returns></returns>
-        public void Set(int index, int n)
+        public void Set(int index, T n)
         {
             if (index < 0 || index > _size)
             {
@@ -98,7 +98,7 @@ namespace _01Array
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public int Get(int index)
+        public T Get(int index)
         {
             if (index < 0 || index > _size - 1)
             {
@@ -111,11 +111,11 @@ namespace _01Array
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public bool Contains(int n)
+        public bool Contains(T n)
         {
             for (int i = 0; i < _size; i++)
             {
-                if (_arr[i] == n)
+                if (_arr[i].Equals(n))
                     return true;
             }
             return false;
@@ -135,11 +135,11 @@ namespace _01Array
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public int IndexOf(int n)
+        public int IndexOf(T n)
         {
             for (int i = 0; i < _size; i++)
             {
-                if (_arr[i] == n)
+                if (_arr[i].Equals(n))
                     return i;
             }
             return DEFAULT_NOT_FIND;
@@ -173,15 +173,15 @@ namespace _01Array
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("MyArray ");
+            sb.Append("PersonArray ");
             sb.Append("[");
             for (int i = 0; i < _size; i++)
             {
                 if (i != _size - 1)
-                { sb.Append(_arr[i] + ", "); }
+                { sb.Append(_arr[i].ToString() + ", "); }
                 else
                 {
-                    sb.Append(_arr[i]);
+                    sb.Append(_arr[i].ToString());
                 }
             }
             sb.Append("]");
