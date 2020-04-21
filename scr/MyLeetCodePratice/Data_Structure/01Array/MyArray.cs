@@ -44,10 +44,10 @@ namespace _01Array
         /// <param name="n"></param>
         public void Add(int n)
         {
+            //添加元素到数组
+            _arr[_size] = n;
             //元素总个数自增
             _size++;
-            //添加元素到数组
-            _arr[_size - 1] = n;
         }
 
         /// <summary>
