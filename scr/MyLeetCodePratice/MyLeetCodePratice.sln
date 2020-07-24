@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Data_Structure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{0CC17BDD-0BDC-4E72-8328-0949EBA3FE77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTable", "Data_Structure\HashTable\HashTable.csproj", "{5C8F656F-4589-42C6-A269-3B055416086D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0CC17BDD-0BDC-4E72-8328-0949EBA3FE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC17BDD-0BDC-4E72-8328-0949EBA3FE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC17BDD-0BDC-4E72-8328-0949EBA3FE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8F656F-4589-42C6-A269-3B055416086D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8F656F-4589-42C6-A269-3B055416086D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8F656F-4589-42C6-A269-3B055416086D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8F656F-4589-42C6-A269-3B055416086D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{3B54630E-23EB-4974-9C23-B2A4D8BC65A8} = {A1230107-264C-4992-A795-496A476D2C8C}
 		{FD6CD557-F619-41B1-9489-5F24689ED85A} = {DC1FF214-E600-4A64-96D2-54E977F8F001}
 		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B} = {FD6CD557-F619-41B1-9489-5F24689ED85A}
+		{5C8F656F-4589-42C6-A269-3B055416086D} = {DC1FF214-E600-4A64-96D2-54E977F8F001}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EA14812-6688-45A4-98A1-2CAF8EB4FC31}
