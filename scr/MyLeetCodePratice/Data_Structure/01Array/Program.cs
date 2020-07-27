@@ -97,9 +97,10 @@ namespace _01Array
             Console.WriteLine($"二进制单向链表 {ListNode.Write(head3)} 转换十进制为：{ans}");
 
 
-            
-
-
+            var head4 = ListNode.GetListNode(1, 2, 3, 4, 5, 6, 7, 8, 9);
+            int k = 5;
+            var kthNode = ListNode.GetKthFromEnd(head4, k);
+            Console.WriteLine($"倒数第 {k}个节点的值为  {kthNode.val} ");
 
 
 

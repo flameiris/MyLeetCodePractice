@@ -194,16 +194,28 @@ namespace LinearList.链表
         /// <param name="head"></param>
         /// <param name="k"></param>
         /// <returns></returns>
-        public static int GetKthFromEnd(ListNode head, int k)
+        public static ListNode GetKthFromEnd(ListNode head, int k)
         {
             //双指针解法
 
-            //初始化两个指针 p 和 q，初始时均指向头结点。
-            ListNode p = head;
-            ListNode q = head;
+            //初始化两个指针 fir 和 sec，初始时均指向头结点。
+            ListNode fir = head;
+            ListNode sec = head;
 
+            //先让 fir 沿着 next 移动 k 次。此时，fir 指向第 k+1个结点，sec 指向头节点，两个指针的距离为 k
+            while (k-- > 0)
+            {
+                fir = fir.next;
+            }
 
+            //同时移动 fir 和 sec，直到 fir 指向空（fir == null），此时 sec 即指向倒数第 k 个结点。
+            while (fir != null)
+            {
+                fir = fir.next;
+                sec = sec.next;
+            }
 
+            return sec;
 
         }
 
