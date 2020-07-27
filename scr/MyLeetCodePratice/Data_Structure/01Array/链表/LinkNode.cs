@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LinearList.链表
@@ -7,9 +8,71 @@ namespace LinearList.链表
 
     public class ListNode
     {
-        public int val;
+        public ListNode(int x) { val = x.ToString(); }
+        public ListNode(string x) { val = x; }
+        //public ListNode(params int[] arr)
+        //{
+        //    ListNode temp = new ListNode(arr[0]);
+        //    ListNode head = new ListNode(arr[0]);
+        //    head = temp;
+        //    for (int i = 1; i < arr.Length; i++)
+        //    {
+        //        temp.next = new ListNode(arr[i]);
+        //        temp = temp.next;
+        //    }
+
+        //}
+        //public ListNode(params string[] arr)
+        //{
+
+        //}
+
+        public string val;
         public ListNode next;
-        public ListNode(int x) { val = x; }
+
+        /// <summary>
+        /// 生成单向链表
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static ListNode GetListNode(params int[] arr)
+        {
+            ListNode temp = new ListNode(arr[0]);
+            //head 赋值为 temp 的指针（head 和 temp 指向同一对象）
+            ListNode head = temp;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                //head 和 temp 指向同一对象 （temp 指向的对象的 .next 创建新的对象）
+                head.next = new ListNode(arr[i]);
+                //head 赋值为新的对象的指针（temp不变）
+                head = head.next;
+            }
+            //head 循环后指向 null，temp为头结点
+            return temp;
+        }
+        /// <summary>
+        /// 生成单向链表
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static ListNode GetListNode(params string[] arr)
+        {
+            ListNode temp = new ListNode(arr[0]);
+            //head 赋值为 temp 的指针（head 和 temp 指向同一对象）
+            ListNode head = temp;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                //head 和 temp 指向同一对象 （temp 指向的对象的 .next 创建新的对象）
+                head.next = new ListNode(arr[i]);
+                //head 赋值为新的对象的指针（temp不变）
+                head = head.next;
+            }
+            //head 循环后指向 null，temp为头结点
+            return temp;
+        }
+
+
+
 
         /// <summary>
         /// 单向链表—完全反转
@@ -85,20 +148,86 @@ namespace LinearList.链表
 
 
         /// <summary>
+        /// https://leetcode-cn.com/problems/delete-middle-node-lcci/
+        /// 实现一种算法，删除单向链表中间的某个节点（即不是第一个或最后一个节点），假定你只能访问该节点。
+        /// 输入：单向链表a->b->c->d->e->f中的节点c
+        /// 结果：不返回任何数据，但该链表变为a->b->d->e->f
+        /// </summary>
+        /// <param name="middleNode"></param>
+        public static void RemoveMiddleListNode(ListNode middleNode)
+        {
+            middleNode.val = middleNode.next.val;
+            middleNode.next = middleNode.next.next;
+        }
+
+
+        /// <summary>
+        /// https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+        /// 二进制转十进制的转换原理：从二进制的右边第一个数开始，每一个乘以2的n次方，n从0开始，每次递增1。
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        public static int ConvertBinaryListNodeToIntNum(ListNode head)
+        {
+            var temp = new ListNode(head.val)
+            {
+                next = head.next
+            };
+            int ans = 0;
+            //二进制转十进制的转换原理：从二进制的右边第一个数开始，每一个乘以2的n次方，n从0开始，每次递增1。
+            //然后得出来的每个数相加即是十进制数。
+            while (temp != null)
+            {
+                ans = ans * 2 + Convert.ToInt32(temp.val);
+                temp = temp.next;
+            }
+            return ans;
+        }
+
+
+        /// <summary>
+        /// https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci
+        /// 实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。给定的 k 保证是有效的。
+        /// 输入： 1->2->3->4->5 和 k = 2
+        /// 输出： 4
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static int GetKthFromEnd(ListNode head, int k)
+        {
+            //双指针解法
+
+            //初始化两个指针 p 和 q，初始时均指向头结点。
+            ListNode p = head;
+            ListNode q = head;
+
+
+
+
+        }
+
+        /// <summary>
         /// 输出链表
         /// </summary>
         /// <param name="head">头结点</param>
-        public static void Write(ListNode head)
+        public static string Write(ListNode head)
         {
-            StringBuilder sb = new StringBuilder();
-            while (head != null)
+            var temp = new ListNode(head.val)
             {
-                sb.Append($"{head.val}->");
-                var temp = head.next;
-                head = temp;
+                next = head.next
+            };
+            StringBuilder sb = new StringBuilder();
+            while (temp != null)
+            {
+                sb.Append($"{temp.val}->");
+                var t = temp.next;
+                temp = t;
             }
-            Console.WriteLine(sb.ToString().TrimEnd('-', '>'));
+            return $"{sb.ToString().TrimEnd('-', '>')}";
         }
+
+
     }
 
 

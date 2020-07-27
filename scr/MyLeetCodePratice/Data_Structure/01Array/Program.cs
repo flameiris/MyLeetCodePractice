@@ -74,22 +74,49 @@ namespace _01Array
 
 
 
-            ListNode head = new ListNode(1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(4);
-            head.next.next.next.next = new ListNode(5);
-
+            #region 链表
             //1->2->3->4->5
-            ListNode.Write(head);
+            var head = ListNode.GetListNode(1, 2, 3, 4, 5);
+            Console.WriteLine(ListNode.Write(head));
 
-            ////单向链表—完全反转
-            //var headReverse = ListNode.ReverseList(head);
-            ////5->4->3->2->1
-            //ListNode.Write(headReverse);
+            //单向链表—完全反转
+            var head1 = ListNode.ReverseList(head);
+            Console.WriteLine(ListNode.Write(head1));
 
-            //单向链表——按k个元素分组，每组反转，k为可以被n整除的正整数
-            var headReverse2 = ListNode.ReverseList(head, 2);
+            //单向链表—完全反转
+            var head2 = ListNode.ReverseList(head1);
+            Console.WriteLine(ListNode.Write(head2));
+
+            //删除单向链表中间的某个节点（即不是第一个或最后一个节点）
+            ListNode.RemoveMiddleListNode(head2.next.next);
+            Console.WriteLine(ListNode.Write(head));
+
+            //二进制单向链表转换十进制为
+            var head3 = ListNode.GetListNode(1, 0, 0, 0, 0, 0, 0);
+            int ans = ListNode.ConvertBinaryListNodeToIntNum(head3);
+            Console.WriteLine($"二进制单向链表 {ListNode.Write(head3)} 转换十进制为：{ans}");
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #endregion
+
 
             Console.ReadKey();
         }
