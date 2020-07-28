@@ -2,6 +2,7 @@
 using LinearList.链表;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
 
@@ -96,22 +97,22 @@ namespace _01Array
             int ans = ListNode.ConvertBinaryListNodeToIntNum(head3);
             Console.WriteLine($"二进制单向链表 {ListNode.Write(head3)} 转换十进制为：{ans}");
 
-
+            //找出单向链表中倒数第 k 个节点。返回该节点的值。给定的 k 保证是有效的。
             var head4 = ListNode.GetListNode(1, 2, 3, 4, 5, 6, 7, 8, 9);
             int k = 5;
             var kthNode = ListNode.GetKthFromEnd(head4, k);
             Console.WriteLine($"倒数第 {k}个节点的值为  {kthNode.val} ");
 
 
+            var head5 = ListNode.GetListNode(1, 2, 3, 4, 5, 6, 7, 8);
+            var arr1 = ListNode.ReverseListReturnArr1(head5);
+            Console.WriteLine(string.Join("->", arr1));
 
 
 
-
-
-
-
-
-
+            var head6 = ListNode.GetListNode(1, 2, 3, 3, 2, 1);
+            var removeNode = ListNode.RemoveRepeatNode(head6);
+            Console.WriteLine($" {ListNode.Write(removeNode)} ");
 
 
 
