@@ -293,21 +293,50 @@ namespace LinearList.链表
 
 
         /// <summary>
+        /// 给定两个（单向）链表，判定它们是否相交并返回交点。请注意相交的定义基于节点的引用，而不是基于节点的值。
+        /// 换句话说，如果一个链表的第k个节点与另一个链表的第j个节点是同一节点（引用完全相同），则这两个链表相交。
+        /// https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci
+        /// </summary>
+        /// <param name="headA"></param>
+        /// <param name="headB"></param>
+        public static void ListNodeCross(ListNode headA, ListNode headB)
+        {
+
+        }
+
+        /// <summary>
+        /// 剑指 Offer 18. 删除链表的节点
+        /// 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
+        /// 返回删除后的链表的头节点。
+        /// https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="val"></param>
+        public static void RemoveNode(ListNode head, int val)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
         /// 输出链表
         /// </summary>
         /// <param name="head">头结点</param>
         public static string Write(ListNode head)
         {
-            var temp = new ListNode(head.val)
-            {
-                next = head.next
-            };
             StringBuilder sb = new StringBuilder();
-            while (temp != null)
+            while (head != null)
             {
-                sb.Append($"{temp.val}->");
-                var t = temp.next;
-                temp = t;
+                sb.Append($"{head.val}->");
+                head = head.next;
             }
             return $"{sb.ToString().TrimEnd('-', '>')}";
         }

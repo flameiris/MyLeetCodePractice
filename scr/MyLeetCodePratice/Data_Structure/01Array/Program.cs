@@ -80,7 +80,8 @@ namespace _01Array
             var head = ListNode.GetListNode(1, 2, 3, 4, 5);
             Console.WriteLine(ListNode.Write(head));
 
-            //单向链表—完全反转
+
+            ////单向链表—完全反转
             var head1 = ListNode.ReverseList(head);
             Console.WriteLine(ListNode.Write(head1));
 
