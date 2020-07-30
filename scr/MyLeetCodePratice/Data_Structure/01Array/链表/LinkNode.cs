@@ -36,18 +36,20 @@ namespace LinearList.链表
         /// <returns></returns>
         public static ListNode GetListNode(params int[] arr)
         {
-            ListNode temp = new ListNode(arr[0]);
-            //head 赋值为 temp 的指针（head 和 temp 指向同一对象）
-            ListNode head = temp;
+            //定义头结点
+            ListNode head = new ListNode(arr[0]);
+
+            //temp 赋值为 指向头结点head的指针（temp 和 head  指向同一对象）
+            ListNode temp = head;
             for (int i = 1; i < arr.Length; i++)
             {
-                //head 和 temp 指向同一对象 （temp 指向的对象的 .next 创建新的对象）
-                head.next = new ListNode(arr[i]);
-                //head 赋值为新的对象的指针（temp不变）
-                head = head.next;
+                //temp 和 head  指针指向同一对象 （temp.next 指向新创建的下一个节点）
+                temp.next = new ListNode(arr[i]);
+                //temp 指向 新创建的下一个节点
+                temp = temp.next;
             }
-            //head 循环后指向 null，temp为头结点
-            return temp;
+            //temp 循环结束后指向尾节点，temp.next 指向 null，  head 为头结点
+            return head;
         }
 
 
@@ -60,6 +62,10 @@ namespace LinearList.链表
         /// <returns></returns>
         public static ListNode ReverseList(ListNode head)
         {
+            //从头到尾进行反转
+            //从头结点 A 开始，头结点指向null  A->NULL  
+            //原头结点 A 指向的节点 B，指向头结点 A    B->A->NULL 
+
             //作为临时变量存储当前节点
             ListNode pre = null;
             ListNode cur = head;
@@ -72,7 +78,7 @@ namespace LinearList.链表
                 cur.next = pre;
                 //临时存储 当前节点反转后的结果
                 pre = cur;
-                //当前节点为下一节点
+                //当前节点指向下一节点
                 cur = next;
             }
             return pre;
@@ -148,10 +154,7 @@ namespace LinearList.链表
         /// <returns></returns>
         public static int ConvertBinaryListNodeToIntNum(ListNode head)
         {
-            var temp = new ListNode(head.val)
-            {
-                next = head.next
-            };
+            var temp = head;
             int ans = 0;
             //二进制转十进制的转换原理：从二进制的右边第一个数开始，每一个乘以2的n次方，n从0开始，每次递增1。
             //然后得出来的每个数相加即是十进制数。
@@ -271,14 +274,16 @@ namespace LinearList.链表
         /// <returns></returns>
         public static ListNode RemoveRepeatNode(ListNode head)
         {
+            //使用哈希表存储出现的节点值
             HashSet<int> hs = new HashSet<int>();
 
             ListNode cur = head;
+            //将头节点值存入
             hs.Add(head.val);
             while (cur.next != null)
             {
-
-                if (hs.Contains(cur.val))
+                //如果添加下一节点值，则当前节点指向下一节点，否则 当前节点的下一节点 指向 当前节点下第二节点
+                if (hs.Add(cur.next.val))
                 {
                     cur = cur.next;
                 }
@@ -288,6 +293,75 @@ namespace LinearList.链表
                 }
 
             }
+            return head;
+        }
+
+
+        /// <summary>
+        /// 返回中间节点
+        /// https://leetcode-cn.com/problems/middle-of-the-linked-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        public static ListNode FindMiddleNode(ListNode head)
+        {
+            if (head.next == null)
+                return head;
+
+            ListNode slow = head;
+            ListNode fast = head;
+
+            while (fast != null && fast.next != null)
+            {
+                //慢指针一次循环往前走一个节点
+                //快指针一次循环往前走两个节点
+                //快指针指向节点的下一节点为null，则有两个中间节点，慢指针指向第二个节点
+                slow = slow.next;
+                fast = fast.next.next;
+
+
+
+                ////慢指针一次循环往前走一个节点
+                ////快指针一次循环往前走两个节点
+                ////快指针为null，则有一个中间节点，慢指针指向中间节点
+                //fast = fast.next.next;
+                //if (fast != null)
+                //{
+                //    slow = slow.next;
+                //}
+            }
+
+            return slow;
+
+        }
+
+
+
+
+
+        /// <summary>
+        /// 剑指 Offer 18. 删除链表的节点
+        /// 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
+        /// 返回删除后的链表的头节点。
+        /// https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="val"></param>
+        public static ListNode RemoveNode(ListNode head, int num)
+        {
+            ListNode cur = head;
+            while (cur.next != null)
+            {
+                if (cur.next.val == num)
+                {
+                    cur.next = cur.next.next;
+                }
+                else
+                {
+                    cur = cur.next;
+                }
+            }
+
             return head;
         }
 
@@ -304,21 +378,45 @@ namespace LinearList.链表
 
         }
 
-        /// <summary>
-        /// 剑指 Offer 18. 删除链表的节点
-        /// 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
-        /// 返回删除后的链表的头节点。
-        /// https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/
-        /// </summary>
-        /// <param name="head"></param>
-        /// <param name="val"></param>
-        public static void RemoveNode(ListNode head, int val)
-        {
 
+        /// <summary>
+        /// 合并两个单项链表，升序排序
+        /// https://leetcode-cn.com/problems/merge-two-sorted-lists/
+        /// </summary>
+        /// <param name="l1"></param>
+        /// <param name="l2"></param>
+        /// <returns></returns>
+        public static ListNode CombineListNode(ListNode l1, ListNode l2)
+        {
+            ListNode prehead = new ListNode(-1);
+
+            ListNode prev = prehead;
+            while (l1 != null && l2 != null)
+            {
+                if (l1.val <= l2.val)
+                {
+                    prev.next = l1;
+                    l1 = l1.next;
+                }
+                else
+                {
+                    prev.next = l2;
+                    l2 = l2.next;
+                }
+                prev = prev.next;
+            }
+
+            // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
+            prev.next = l1 == null ? l2 : l1;
+
+            return prehead.next;
         }
 
 
-
+        public static bool IsListNodePalindrome(ListNode head)
+        { 
+        
+        }
 
 
 

@@ -75,7 +75,14 @@ namespace _01Array
 
 
 
-            #region 链表
+            #region 单向链表
+            //1.单向链表只能使用头结点遍历所有节点，如果给出中间某个节点则无法遍历所有节点
+            //2.单向链表的完全反转，无法返回原链表
+            //3.
+
+
+
+
             //1->2->3->4->5
             var head = ListNode.GetListNode(1, 2, 3, 4, 5);
             Console.WriteLine(ListNode.Write(head));
@@ -104,17 +111,45 @@ namespace _01Array
             var kthNode = ListNode.GetKthFromEnd(head4, k);
             Console.WriteLine($"倒数第 {k}个节点的值为  {kthNode.val} ");
 
-
+            //从尾到头打印链表 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
             var head5 = ListNode.GetListNode(1, 2, 3, 4, 5, 6, 7, 8);
             var arr1 = ListNode.ReverseListReturnArr1(head5);
             Console.WriteLine(string.Join("->", arr1));
 
+            var head6 = ListNode.GetListNode(1, 2, 3, 4, 5, 6, 7, 8);
+            var arr2 = ListNode.ReverseListReturnArr2(head6);
+            Console.WriteLine(string.Join("->", arr2));
 
 
-            var head6 = ListNode.GetListNode(1, 2, 3, 3, 2, 1);
-            var removeNode = ListNode.RemoveRepeatNode(head6);
+            //移除重复值的节点
+            var head7 = ListNode.GetListNode(1, 2, 3, 3, 2, 1);
+            var removeNode = ListNode.RemoveRepeatNode(head7);
             Console.WriteLine($" {ListNode.Write(removeNode)} ");
 
+
+
+            //返回链表的中间节点，如果有两个，则返回第二个
+            var head8 = ListNode.GetListNode(1, 3, 5, 7, 9, 11);
+            var middleNode = ListNode.FindMiddleNode(head8);
+            Console.WriteLine($"中间节点的值是 {middleNode.val}");
+
+
+
+
+            //删除指定值的节点
+            var head9 = ListNode.GetListNode(1, 3, 5, 7, 9, 11);
+            var head92 = ListNode.RemoveNode(head9, 7);
+            Console.WriteLine($"删除节点后的链表为：{ListNode.Write(head92)}");
+
+
+            //升序合并链表
+            var head101 = ListNode.GetListNode(1, 3, 5, 7, 9, 11);
+            var head102 = ListNode.GetListNode(1, 3, 5);
+            var head103 = ListNode.CombineListNode(head101, head102);
+            Console.WriteLine($"按升序合并后的链表为：{ListNode.Write(head103)}");
+
+
+            //检查输入的链表是否是回文的
 
 
 
