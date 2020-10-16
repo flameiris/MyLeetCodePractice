@@ -414,8 +414,8 @@ namespace LinearList.链表
 
 
         public static bool IsListNodePalindrome(ListNode head)
-        { 
-        
+        {
+
         }
 
 
