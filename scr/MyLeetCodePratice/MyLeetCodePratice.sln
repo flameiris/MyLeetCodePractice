@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashTable", "Data_Structure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tree", "Data_Structure\Tree\Tree.csproj", "{C9BB20FC-AD6F-4347-AA18-25DE29570DA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort", "Data_Structure\Algorithms\Sort\Sort.csproj", "{46B5949B-3209-48D9-BC12-C6DB1CF6D9EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C9BB20FC-AD6F-4347-AA18-25DE29570DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9BB20FC-AD6F-4347-AA18-25DE29570DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9BB20FC-AD6F-4347-AA18-25DE29570DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B5949B-3209-48D9-BC12-C6DB1CF6D9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B5949B-3209-48D9-BC12-C6DB1CF6D9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B5949B-3209-48D9-BC12-C6DB1CF6D9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B5949B-3209-48D9-BC12-C6DB1CF6D9EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{E17BB1E8-DC20-4EAD-9957-A2C79D83086B} = {FD6CD557-F619-41B1-9489-5F24689ED85A}
 		{5C8F656F-4589-42C6-A269-3B055416086D} = {DC1FF214-E600-4A64-96D2-54E977F8F001}
 		{C9BB20FC-AD6F-4347-AA18-25DE29570DA2} = {DC1FF214-E600-4A64-96D2-54E977F8F001}
+		{46B5949B-3209-48D9-BC12-C6DB1CF6D9EE} = {FD6CD557-F619-41B1-9489-5F24689ED85A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EA14812-6688-45A4-98A1-2CAF8EB4FC31}

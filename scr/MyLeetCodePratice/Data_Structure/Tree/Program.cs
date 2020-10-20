@@ -10,16 +10,24 @@ namespace Tree
         static void Main(string[] args)
         {
 
-            Queue<int> queue = new Queue<int>(new int[] { 3, 1, 2 });
-            var binaryTree = BinaryTreeNode.CreateBinaryTree(queue);
+
+            ///  手动构建二叉树
+            ///       1
+            ///    2     3
+            ///  4   5     6
+            var binaryTree = BinaryTreeNode.CreateBinaryTree();
+            Console.WriteLine($"层序遍历(迭代)={{ {string.Join(",", BinaryTreeNode.LevelTraversal(binaryTree).ToList())}  }}");
 
 
+            ///  前序遍历  1 | 2 | 4 , 5 | 3 | 6
             Console.WriteLine($"前序遍历(迭代)={{ {string.Join(",", BinaryTreeNode.PreOrderTraverseIteration(binaryTree).ToList())}  }}");
-            Console.WriteLine($"前序遍历(递归)={{ {string.Join(",", BinaryTreeNode.PreOrderTraverseIteration(binaryTree).ToList())}  }}");
+            Console.WriteLine($"前序遍历(递归)={{ {string.Join(",", BinaryTreeNode.PreOrderTraverseRecursion(binaryTree).ToList())}  }}");
 
-            //Console.WriteLine($"中序遍历(迭代)={{ {string.Join(",", BinaryTreeNode.InOrderTraverseIteration(binaryTree).ToList())}  }}");
+            ///  中序遍历 
+            Console.WriteLine($"中序遍历(迭代)={{ {string.Join(",", BinaryTreeNode.InOrderTraverseIteration(binaryTree).ToList())}  }}");
             Console.WriteLine($"中序遍历(递归)={{ {string.Join(",", BinaryTreeNode.InOrderTraverseRecursion(binaryTree).ToList())}  }}");
 
+            ///  后序遍历
             Console.WriteLine($"后序遍历(迭代)={{ {string.Join(",", BinaryTreeNode.PostOrderTraverseIteration(binaryTree).ToList())}  }}");
             Console.WriteLine($"后序遍历(递归)={{ {string.Join(",", BinaryTreeNode.PostOrderTraverseRecursion(binaryTree).ToList())}  }}");
 
