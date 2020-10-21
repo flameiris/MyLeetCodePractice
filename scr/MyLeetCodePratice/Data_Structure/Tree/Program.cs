@@ -56,7 +56,7 @@ namespace Tree
 
             //二叉树的最小深度
             var tree = BinaryTreeNode.CreateBinaryTree(new List<int?> { 3, 9, 20, null, null, 15, 7 });
-
+            Console.WriteLine($"二叉树的最小深度：{BinaryTreeNode.GetMinDepth(tree)}");
 
             #endregion
 
