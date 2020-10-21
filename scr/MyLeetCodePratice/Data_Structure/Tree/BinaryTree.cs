@@ -469,6 +469,7 @@ namespace Tree
             return Math.Min(m1, m2) + 1;
 
 
+
             //if (root == null) return 0;
             //int m1 = GetMinDepth(root.LeftNode);
             //int m2 = GetMinDepth(root.RightNode);
